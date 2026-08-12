@@ -1,268 +1,287 @@
 # 🧠 Brain Tumor MRI Classification
 
-A deep learning project for **multi-class classification of brain MRI images** into four categories: **glioma, meningioma, pituitary tumor, and no tumor**.
+A deep learning project for **multi-class brain tumor classification from MRI images**, comparing a custom CNN with two transfer-learning models, **ResNet50** and **EfficientNetB0**.
 
-The project compares a custom Convolutional Neural Network (CNN) with transfer-learning approaches using **ResNet50** and **EfficientNetB0**. It also explores model interpretability using **Grad-CAM** to visualize image regions that contribute to the model's predictions.
+The project also includes model evaluation, ensemble experiments, learning-rate experiments, and **Grad-CAM-based visual explanations** of model predictions.
 
-> **Disclaimer:** This project is intended for research and educational purposes only. It is not a medical diagnostic system and should not be used to make clinical decisions.
+> ⚠️ **Disclaimer:** This project is intended for educational and research purposes. It is not a medical diagnostic system and should not be used for clinical decision-making.
 
 ---
 
-## 📌 Project Overview
+## 📌 Overview
 
-Brain tumor classification from MRI scans is a challenging computer vision problem because tumors can vary considerably in size, shape, location, and appearance.
+Brain tumor classification from MRI images is a challenging computer vision problem due to variations in tumor appearance, size, location, and imaging characteristics.
 
-This project investigates whether deep learning models can effectively classify MRI scans into four tumor categories and compares the performance of different architectures.
-
-### Classes
-
-The models classify MRI scans into:
+This project investigates the ability of different deep learning architectures to classify brain MRI images into four categories:
 
 * **Glioma**
 * **Meningioma**
 * **Pituitary tumor**
 * **No tumor**
 
+The project compares a custom CNN trained from scratch against pretrained architectures and examines their performance using several evaluation methods.
+
 ---
 
 ## 🎯 Objectives
 
-The main objectives of this project are to:
+The main goals of this project are to:
 
-* Develop a baseline CNN for brain MRI classification.
-* Compare the baseline model with pretrained **ResNet50** and **EfficientNetB0** architectures.
-* Evaluate model performance using multiple classification metrics.
-* Analyze class-specific performance using confusion matrices and classification reports.
-* Investigate model predictions using **Grad-CAM**.
-* Provide a foundation for further research into generalization and explainable medical image classification.
+* Build a baseline CNN for MRI classification.
+* Investigate transfer learning using **ResNet50** and **EfficientNetB0**.
+* Compare the performance of different architectures.
+* Analyze performance at both overall and class-specific levels.
+* Experiment with model ensembles.
+* Investigate learning-rate effects on model performance.
+* Visualize model decisions using **Grad-CAM**.
+* Explore the generalization and interpretability of deep learning models for MRI classification.
 
 ---
 
 ## 🗂️ Dataset
 
-The project uses the **Brain Tumor MRI Dataset** from Kaggle.
+The project uses the **Brain Tumor MRI Dataset** available on Kaggle.
 
-The dataset contains MRI images belonging to four classes:
+The dataset contains four classes:
 
-| Class      | Description                            |
-| ---------- | -------------------------------------- |
-| Glioma     | MRI scans containing glioma tumors     |
-| Meningioma | MRI scans containing meningioma tumors |
-| Pituitary  | MRI scans containing pituitary tumors  |
-| No Tumor   | MRI scans without a detected tumor     |
+| Class      | Description                             |
+| ---------- | --------------------------------------- |
+| Glioma     | MRI images containing glioma tumors     |
+| Meningioma | MRI images containing meningioma tumors |
+| Pituitary  | MRI images containing pituitary tumors  |
+| No Tumor   | MRI images without a tumor              |
 
-Dataset source:
+### Dataset
 
-**Brain Tumor MRI Dataset**
-https://www.kaggle.com/datasets/masoudnickparvar/brain-tumor-mri-dataset
+[Brain Tumor MRI Dataset on Kaggle](https://www.kaggle.com/datasets/masoudnickparvar/brain-tumor-mri-dataset)
 
-The images are resized to **224 × 224 pixels** for model training.
+Images are resized to **224 × 224 pixels** for model input.
 
 ---
 
 ## 🏗️ Models
 
-Three deep learning approaches are investigated.
+Three primary architectures are investigated.
 
 ### 1. Custom CNN
 
-A convolutional neural network developed specifically for this project.
+A convolutional neural network designed specifically for this project.
 
-The baseline architecture consists of convolutional layers followed by pooling and fully connected layers for four-class classification.
+The baseline CNN consists of multiple convolutional and pooling layers followed by fully connected layers for four-class classification.
 
-The baseline model uses grayscale MRI images and pixel normalization.
+The baseline model uses **grayscale MRI images** with pixel-value normalization.
 
 ### 2. ResNet50
 
-A pretrained **ResNet50** model is used through transfer learning.
+A pretrained **ResNet50** architecture is used through transfer learning.
 
-The original classification head is replaced with a custom head designed for the four MRI classes.
+The original ImageNet classification head is replaced with a custom classification head for the four MRI classes.
 
-ResNet50 processes RGB images using the corresponding ResNet preprocessing pipeline.
+Input images are processed as RGB images using the ResNet50 preprocessing pipeline.
 
 ### 3. EfficientNetB0
 
-A pretrained **EfficientNetB0** model is also evaluated.
+A pretrained **EfficientNetB0** model is evaluated as another transfer-learning approach.
 
 The model uses:
 
 * ImageNet pretrained weights
 * `224 × 224 × 3` input
 * Global Average Pooling
-* Dense classification layers
+* Fully connected classification layers
 * Dropout regularization
 * Four-class softmax output
 
-Fine-tuning is used to adapt the pretrained model to the MRI classification task.
+Fine-tuning is used to adapt the pretrained network to the MRI classification task.
 
 ---
 
-## 🔬 Experimental Pipeline
-
-The general workflow is:
+## 🔬 Experimental Workflow
 
 ```text
-MRI Dataset
-     │
-     ▼
-Image Loading
-     │
-     ▼
-Preprocessing & Resizing
-     │
-     ▼
-Train / Validation / Test Sets
-     │
-     ├───────────────┬────────────────┐
-     ▼               ▼                ▼
-  Custom CNN      ResNet50       EfficientNetB0
-     │               │                │
-     └───────────────┴────────────────┘
-                     │
-                     ▼
-              Model Evaluation
-                     │
-        ┌────────────┼────────────┐
-        ▼            ▼            ▼
-   Accuracy      Confusion     Classification
-                  Matrix          Report
-                     │
-                     ▼
-                 Grad-CAM
+                    Brain MRI Dataset
+                           │
+                           ▼
+                 Image Preprocessing
+                           │
+                           ▼
+                  Train / Validation
+                       /        \
+                      /          \
+                     ▼            ▼
+               Custom CNN    Transfer Learning
+                              /           \
+                             ▼             ▼
+                         ResNet50    EfficientNetB0
+                             \             /
+                              \           /
+                               ▼         ▼
+                              Evaluation
+                                  │
+                ┌─────────────────┼─────────────────┐
+                ▼                 ▼                 ▼
+            Metrics          Confusion          Grad-CAM
+                             Matrix
+                │
+                ▼
+          Model Comparison
+                │
+                ▼
+       Ensemble Experiments
 ```
 
 ---
 
-## 📊 Evaluation
+## 📊 Model Evaluation
 
-Model performance is evaluated using more than accuracy alone.
+Models are evaluated using multiple metrics rather than relying solely on accuracy.
 
-The evaluation includes:
+The evaluation pipeline includes:
 
 * Accuracy
 * Precision
 * Recall
 * F1-score
-* Confusion matrix
-* ROC-AUC where applicable
+* Confusion matrices
+* Classification reports
+* ROC-AUC analysis where applicable
 * Class-specific performance
+* Training and validation loss
+* Training and validation accuracy
 
-This is particularly important for medical-image classification because overall accuracy can hide poor performance on individual classes.
+This is important because overall accuracy can hide poor performance on individual tumor classes.
 
 ---
 
-## 🔍 Explainability with Grad-CAM
+## 🔍 Grad-CAM Explainability
 
-To investigate **why** the models make particular predictions, Grad-CAM is applied to selected convolutional layers.
+The project uses **Grad-CAM (Gradient-weighted Class Activation Mapping)** to investigate which regions of an MRI image contribute to a model's prediction.
 
-Grad-CAM produces a heatmap showing the image regions that contributed most strongly to the model's prediction.
+The generated heatmaps provide a visual representation of the areas receiving the strongest activation for a particular prediction.
 
-This allows the project to examine whether the models are focusing on visually meaningful regions of the MRI rather than irrelevant image features.
+This is used to investigate whether models are focusing on potentially meaningful regions of the MRI rather than irrelevant image features.
 
-Target layers used for the models include:
+The current Grad-CAM implementation targets layers appropriate for each architecture, including:
 
 ```text
-Custom CNN        → final convolutional layer
-ResNet50          → conv5_block3_out
-EfficientNetB0    → top_activation
+Custom CNN       → final convolutional layer
+ResNet50         → conv5_block3_out
+EfficientNetB0   → top_activation
 ```
 
-Example workflow:
+Example:
 
 ```text
 MRI Image
-   │
-   ▼
+    │
+    ▼
 Trained Model
-   │
-   ▼
+    │
+    ▼
 Predicted Class
-   │
-   ▼
-Gradient Calculation
-   │
-   ▼
+    │
+    ▼
+Gradient Computation
+    │
+    ▼
+Activation Weights
+    │
+    ▼
 Grad-CAM Heatmap
-   │
-   ▼
-Visualization
+    │
+    ▼
+Overlay on MRI
 ```
+
+---
+
+## 🤝 Ensemble Experiments
+
+In addition to evaluating individual models, the project investigates whether combining model predictions can improve classification performance.
+
+The repository contains ensemble-related experiments and learning-rate ensemble experiments.
+
+The purpose is to determine whether different models make complementary predictions and whether combining them provides an advantage over individual architectures.
 
 ---
 
 ## 📈 Results
 
-The current experiments show that deep learning models can achieve strong classification performance on the selected dataset.
+The current experiments demonstrate strong classification performance on the selected dataset, with test performance reaching approximately **92% accuracy** in the evaluated setup.
 
-A representative evaluation has achieved approximately **92% test accuracy**, although performance varies between architectures and individual tumor classes.
+However, performance differs between classes and architectures.
 
-Class-level analysis is also performed because some categories, particularly **glioma**, can be more difficult for the models to distinguish from other tumor types.
+In particular, **glioma classification presents greater difficulty** than some of the other classes, making class-specific evaluation important.
 
-> Results should be interpreted in the context of the dataset and experimental setup. High performance on a single dataset does not necessarily imply reliable performance on unseen clinical data.
+The repository includes additional evaluation outputs and experiments for examining these differences.
 
-Detailed results, including confusion matrices, classification reports, and Grad-CAM visualizations, are included in the project notebooks/results where available.
+> **Important:** Performance on this dataset should not be interpreted as evidence of clinical reliability. A model can perform well on a benchmark dataset while still failing to generalize to MRI scans acquired from different institutions, scanners, populations, or imaging protocols.
 
 ---
 
 ## 🧪 Technologies
 
-The project is implemented using Python and the following major libraries:
+### Programming
 
 * Python
-* TensorFlow
-* Keras
-* NumPy
-* OpenCV
-* Pillow
-* Matplotlib
-* Scikit-learn
 
 ### Deep Learning
 
-* Convolutional Neural Networks
-* Transfer Learning
+* TensorFlow
+* Keras
+* CNN
 * ResNet50
 * EfficientNetB0
+* Transfer Learning
+* Fine-tuning
 * Grad-CAM
+
+### Data Science
+
+* NumPy
+* Pandas
+* Scikit-learn
+
+### Image Processing & Visualization
+
+* OpenCV
+* Pillow
+* Matplotlib
 
 ---
 
-## 📁 Project Structure
-
-The repository is organized around model training, evaluation, and explainability.
-
-A typical structure is:
+## 📁 Repository Structure
 
 ```text
 tumor-detection-mri/
 │
+├── data/
+│
 ├── models/
-│   ├── BaseCNN/
-│   ├── ResNet50/
-│   └── EfficientNetB0/
 │
-├── notebooks/
-│   ├── training/
-│   ├── evaluation/
-│   └── GradCAM/
+├── initial report/
 │
-├── results/
-│   ├── confusion_matrices/
-│   ├── classification_reports/
-│   └── gradcam/
+├── Base_CNN copy.ipynb
+├── ResNet50.ipynb
+├── efficientNet.ipynb
+├── lr_ensemble.ipynb
+├── modelsSummary.ipynb
 │
-├── preprocessing/
+├── app.py
+├── compare.py
+├── ensemble.py
+├── evaluate.py
+├── gradcam.py
 │
+├── loss_json/
 ├── requirements.txt
-├── README.md
-└── .gitignore
+├── .gitignore
+└── README.md
 ```
-
-*The exact structure should be updated to match the repository files.*
 
 ---
 
-## 🚀 Getting Started
+## 🚀 Installation
 
 ### 1. Clone the repository
 
@@ -275,6 +294,11 @@ cd tumor-detection-mri
 
 ```bash
 python -m venv .venv
+```
+
+Activate it on Linux/macOS:
+
+```bash
 source .venv/bin/activate
 ```
 
@@ -290,92 +314,151 @@ On Windows:
 pip install -r requirements.txt
 ```
 
-### 4. Download the dataset
+---
 
-Download the Brain Tumor MRI Dataset from Kaggle and place it according to the dataset structure expected by the notebooks/scripts.
+## ▶️ Running the Project
 
-### 5. Train a model
+The repository contains separate notebooks and Python scripts for different parts of the project.
 
-Run the corresponding training notebook or script.
+### Model training
 
-### 6. Evaluate the model
+The model training experiments are contained in:
 
-Run the evaluation workflow to generate:
+```text
+Base_CNN copy.ipynb
+ResNet50.ipynb
+efficientNet.ipynb
+```
 
-* Classification reports
-* Confusion matrices
-* Accuracy/loss curves
-* Additional evaluation metrics
+### Model comparison
 
-### 7. Generate Grad-CAM visualizations
+Use:
 
-Use the Grad-CAM workflow with a trained model and an MRI image to visualize the regions contributing to the prediction.
+```text
+compare.py
+```
+
+to compare model performance.
+
+### Evaluation
+
+The evaluation workflow is implemented in:
+
+```text
+evaluate.py
+```
+
+### Grad-CAM
+
+Grad-CAM visualization is implemented in:
+
+```text
+gradcam.py
+```
+
+### Ensemble experiments
+
+Ensemble experiments are contained in:
+
+```text
+ensemble.py
+lr_ensemble.ipynb
+```
+
+### Model summary
+
+Model architecture and parameter comparisons are explored in:
+
+```text
+modelsSummary.ipynb
+```
+
+---
+
+## 🖥️ Application
+
+The repository also contains an application entry point:
+
+```text
+app.py
+```
+
+This provides the basis for interacting with the trained models outside the training notebooks.
+
+The application is intended as a demonstration of the trained classification models rather than a clinical diagnostic interface.
 
 ---
 
 ## ⚠️ Limitations
 
-Several limitations should be considered:
+This project has several important limitations.
 
-1. **Dataset generalization**
+### Dataset Generalization
 
-   Performance on the selected dataset does not guarantee equivalent performance on MRI scans from different hospitals, scanners, populations, or acquisition protocols.
+The models are primarily evaluated on the selected dataset. Performance may decrease substantially on external datasets.
 
-2. **Dataset bias**
+### Dataset Bias
 
-   Deep learning models can learn dataset-specific characteristics that are unrelated to the underlying medical condition.
+Models may learn characteristics specific to the dataset rather than clinically meaningful tumor features.
 
-3. **Class imbalance**
+### 2D Classification
 
-   Differences in the number and characteristics of samples across classes can influence model performance.
+The project treats MRI images primarily as 2D images rather than using complete 3D MRI volumes.
 
-4. **2D image classification**
+### Class-Specific Performance
 
-   MRI data is inherently volumetric, while this project primarily treats individual images as 2D inputs.
+Overall accuracy does not fully describe model behavior. Some classes are more difficult to distinguish than others.
 
-5. **No clinical validation**
+### Clinical Validation
 
-   The models have not undergone clinical validation and should not be considered diagnostic tools.
+The models have not undergone clinical validation and should not be considered medical diagnostic systems.
 
-6. **Explainability limitations**
+### Explainability
 
-   Grad-CAM provides an indication of image regions associated with a prediction, but it does not prove that the highlighted region represents the actual pathological feature used by a clinician.
+Grad-CAM highlights regions associated with model activation, but these visualizations do not prove that the highlighted regions correspond to clinically meaningful tumor features.
 
 ---
 
 ## 🔮 Future Work
 
-Potential directions for improving the project include:
+Potential improvements include:
 
-* Testing on completely independent MRI datasets.
-* Applying data augmentation and evaluating its effect on generalization.
-* Performing systematic hyperparameter optimization.
+* Testing on independent external datasets.
+* Evaluating cross-dataset generalization.
+* Adding systematic data augmentation experiments.
+* Performing more extensive hyperparameter optimization.
 * Comparing additional pretrained architectures.
-* Investigating patient-level rather than image-level splitting.
+* Investigating patient-level dataset splitting.
 * Exploring MRI segmentation before classification.
-* Evaluating calibration and uncertainty.
-* Conducting external validation on datasets from different sources.
-* Improving explainability using additional XAI techniques.
-* Developing an interactive demonstration application.
+* Evaluating model calibration and prediction uncertainty.
+* Improving ensemble strategies.
+* Expanding explainability with additional XAI techniques.
+* Developing a more complete interactive application.
 
 ---
 
 ## 📚 References
 
-* Kaggle Brain Tumor MRI Dataset
-  https://www.kaggle.com/datasets/masoudnickparvar/brain-tumor-mri-dataset
+### Dataset
 
-* He, K., Zhang, X., Ren, S., & Sun, J. *Deep Residual Learning for Image Recognition.*
+Masoud Nickparvar. **Brain Tumor MRI Dataset.** Kaggle.
 
-* Tan, M., & Le, Q. V. *EfficientNet: Rethinking Model Scaling for Convolutional Neural Networks.*
+https://www.kaggle.com/datasets/masoudnickparvar/brain-tumor-mri-dataset
 
-* Selvaraju, R. R. et al. *Grad-CAM: Visual Explanations from Deep Networks via Gradient-based Localization.*
+### ResNet
 
----
+He, K., Zhang, X., Ren, S., & Sun, J.
+**Deep Residual Learning for Image Recognition.**
 
-## 📜 License
+### EfficientNet
 
-Add the license appropriate for the source code and dataset usage before publishing the repository as a research project.
+Tan, M., & Le, Q. V.
+**EfficientNet: Rethinking Model Scaling for Convolutional Neural Networks.**
+
+### Grad-CAM
+
+Selvaraju, R. R. et al.
+**Grad-CAM: Visual Explanations from Deep Networks via Gradient-Based Localization.**
 
 ---
 
@@ -383,4 +466,12 @@ Add the license appropriate for the source code and dataset usage before publish
 
 **Raya**
 
-GitHub: https://github.com/Raya1313
+GitHub: [@Raya1313](https://github.com/Raya1313)
+
+---
+
+## 📜 License
+
+This repository currently does not specify a license.
+
+If this project is intended for public reuse, consider adding an appropriate open-source license.
