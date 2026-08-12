@@ -1,0 +1,822 @@
+[
+  {
+    "index": 71,
+    "true_class": "notumor",
+    "efficientnet_pred": "meningioma",
+    "efficientnet_correct": false,
+    "efficientnet_loss": 0.7040524482727051,
+    "resnet50_pred": "notumor",
+    "resnet50_correct": true,
+    "resnet50_loss": 0.0003318144881632179
+  },
+  {
+    "index": 372,
+    "true_class": "notumor",
+    "efficientnet_pred": "meningioma",
+    "efficientnet_correct": false,
+    "efficientnet_loss": 0.867098331451416,
+    "resnet50_pred": "notumor",
+    "resnet50_correct": true,
+    "resnet50_loss": 0.6433885097503662
+  },
+  {
+    "index": 412,
+    "true_class": "glioma",
+    "efficientnet_pred": "glioma",
+    "efficientnet_correct": true,
+    "efficientnet_loss": 0.3730519711971283,
+    "resnet50_pred": "meningioma",
+    "resnet50_correct": false,
+    "resnet50_loss": 1.4130363464355469
+  },
+  {
+    "index": 415,
+    "true_class": "glioma",
+    "efficientnet_pred": "meningioma",
+    "efficientnet_correct": false,
+    "efficientnet_loss": 3.583742380142212,
+    "resnet50_pred": "glioma",
+    "resnet50_correct": true,
+    "resnet50_loss": 0.08972115814685822
+  },
+  {
+    "index": 417,
+    "true_class": "glioma",
+    "efficientnet_pred": "glioma",
+    "efficientnet_correct": true,
+    "efficientnet_loss": 0.26306822896003723,
+    "resnet50_pred": "meningioma",
+    "resnet50_correct": false,
+    "resnet50_loss": 0.770946741104126
+  },
+  {
+    "index": 424,
+    "true_class": "glioma",
+    "efficientnet_pred": "meningioma",
+    "efficientnet_correct": false,
+    "efficientnet_loss": 5.303012371063232,
+    "resnet50_pred": "glioma",
+    "resnet50_correct": true,
+    "resnet50_loss": 0.4032844007015228
+  },
+  {
+    "index": 439,
+    "true_class": "glioma",
+    "efficientnet_pred": "glioma",
+    "efficientnet_correct": true,
+    "efficientnet_loss": 0.10490275174379349,
+    "resnet50_pred": "meningioma",
+    "resnet50_correct": false,
+    "resnet50_loss": 0.9231253266334534
+  },
+  {
+    "index": 440,
+    "true_class": "glioma",
+    "efficientnet_pred": "meningioma",
+    "efficientnet_correct": false,
+    "efficientnet_loss": 4.79598331451416,
+    "resnet50_pred": "glioma",
+    "resnet50_correct": true,
+    "resnet50_loss": 0.05969036743044853
+  },
+  {
+    "index": 449,
+    "true_class": "glioma",
+    "efficientnet_pred": "glioma",
+    "efficientnet_correct": true,
+    "efficientnet_loss": 0.03288452327251434,
+    "resnet50_pred": "meningioma",
+    "resnet50_correct": false,
+    "resnet50_loss": 2.1662580966949463
+  },
+  {
+    "index": 460,
+    "true_class": "glioma",
+    "efficientnet_pred": "glioma",
+    "efficientnet_correct": true,
+    "efficientnet_loss": 0.31035903096199036,
+    "resnet50_pred": "meningioma",
+    "resnet50_correct": false,
+    "resnet50_loss": 2.354846477508545
+  },
+  {
+    "index": 473,
+    "true_class": "glioma",
+    "efficientnet_pred": "glioma",
+    "efficientnet_correct": true,
+    "efficientnet_loss": 0.02238495461642742,
+    "resnet50_pred": "meningioma",
+    "resnet50_correct": false,
+    "resnet50_loss": 1.9264147281646729
+  },
+  {
+    "index": 484,
+    "true_class": "glioma",
+    "efficientnet_pred": "meningioma",
+    "efficientnet_correct": false,
+    "efficientnet_loss": 0.8225158452987671,
+    "resnet50_pred": "glioma",
+    "resnet50_correct": true,
+    "resnet50_loss": 0.39571112394332886
+  },
+  {
+    "index": 493,
+    "true_class": "glioma",
+    "efficientnet_pred": "glioma",
+    "efficientnet_correct": true,
+    "efficientnet_loss": 0.07419382780790329,
+    "resnet50_pred": "meningioma",
+    "resnet50_correct": false,
+    "resnet50_loss": 1.176418423652649
+  },
+  {
+    "index": 501,
+    "true_class": "glioma",
+    "efficientnet_pred": "glioma",
+    "efficientnet_correct": true,
+    "efficientnet_loss": 0.41361483931541443,
+    "resnet50_pred": "meningioma",
+    "resnet50_correct": false,
+    "resnet50_loss": 3.381661891937256
+  },
+  {
+    "index": 504,
+    "true_class": "glioma",
+    "efficientnet_pred": "glioma",
+    "efficientnet_correct": true,
+    "efficientnet_loss": 0.349476158618927,
+    "resnet50_pred": "meningioma",
+    "resnet50_correct": false,
+    "resnet50_loss": 1.2527170181274414
+  },
+  {
+    "index": 511,
+    "true_class": "glioma",
+    "efficientnet_pred": "glioma",
+    "efficientnet_correct": true,
+    "efficientnet_loss": 0.008420775644481182,
+    "resnet50_pred": "meningioma",
+    "resnet50_correct": false,
+    "resnet50_loss": 1.9667577743530273
+  },
+  {
+    "index": 520,
+    "true_class": "glioma",
+    "efficientnet_pred": "glioma",
+    "efficientnet_correct": true,
+    "efficientnet_loss": 0.4674926996231079,
+    "resnet50_pred": "meningioma",
+    "resnet50_correct": false,
+    "resnet50_loss": 5.692869186401367
+  },
+  {
+    "index": 521,
+    "true_class": "glioma",
+    "efficientnet_pred": "glioma",
+    "efficientnet_correct": true,
+    "efficientnet_loss": 0.2631339132785797,
+    "resnet50_pred": "meningioma",
+    "resnet50_correct": false,
+    "resnet50_loss": 2.478151559829712
+  },
+  {
+    "index": 537,
+    "true_class": "glioma",
+    "efficientnet_pred": "glioma",
+    "efficientnet_correct": true,
+    "efficientnet_loss": 0.16055381298065186,
+    "resnet50_pred": "pituitary",
+    "resnet50_correct": false,
+    "resnet50_loss": 2.1736068725585938
+  },
+  {
+    "index": 538,
+    "true_class": "glioma",
+    "efficientnet_pred": "meningioma",
+    "efficientnet_correct": false,
+    "efficientnet_loss": 1.2143229246139526,
+    "resnet50_pred": "glioma",
+    "resnet50_correct": true,
+    "resnet50_loss": 0.0006623076624237001
+  },
+  {
+    "index": 540,
+    "true_class": "glioma",
+    "efficientnet_pred": "glioma",
+    "efficientnet_correct": true,
+    "efficientnet_loss": 0.37053290009498596,
+    "resnet50_pred": "meningioma",
+    "resnet50_correct": false,
+    "resnet50_loss": 2.151211977005005
+  },
+  {
+    "index": 554,
+    "true_class": "glioma",
+    "efficientnet_pred": "glioma",
+    "efficientnet_correct": true,
+    "efficientnet_loss": 0.008516112342476845,
+    "resnet50_pred": "meningioma",
+    "resnet50_correct": false,
+    "resnet50_loss": 1.0406341552734375
+  },
+  {
+    "index": 558,
+    "true_class": "glioma",
+    "efficientnet_pred": "glioma",
+    "efficientnet_correct": true,
+    "efficientnet_loss": 0.6215896010398865,
+    "resnet50_pred": "meningioma",
+    "resnet50_correct": false,
+    "resnet50_loss": 1.687942624092102
+  },
+  {
+    "index": 567,
+    "true_class": "glioma",
+    "efficientnet_pred": "glioma",
+    "efficientnet_correct": true,
+    "efficientnet_loss": 0.29716068506240845,
+    "resnet50_pred": "meningioma",
+    "resnet50_correct": false,
+    "resnet50_loss": 1.787893533706665
+  },
+  {
+    "index": 569,
+    "true_class": "glioma",
+    "efficientnet_pred": "meningioma",
+    "efficientnet_correct": false,
+    "efficientnet_loss": 1.0456132888793945,
+    "resnet50_pred": "glioma",
+    "resnet50_correct": true,
+    "resnet50_loss": 0.14971531927585602
+  },
+  {
+    "index": 573,
+    "true_class": "glioma",
+    "efficientnet_pred": "glioma",
+    "efficientnet_correct": true,
+    "efficientnet_loss": 0.0017491370672360063,
+    "resnet50_pred": "pituitary",
+    "resnet50_correct": false,
+    "resnet50_loss": 0.7044315338134766
+  },
+  {
+    "index": 592,
+    "true_class": "glioma",
+    "efficientnet_pred": "glioma",
+    "efficientnet_correct": true,
+    "efficientnet_loss": 0.14933767914772034,
+    "resnet50_pred": "meningioma",
+    "resnet50_correct": false,
+    "resnet50_loss": 3.7707316875457764
+  },
+  {
+    "index": 602,
+    "true_class": "glioma",
+    "efficientnet_pred": "glioma",
+    "efficientnet_correct": true,
+    "efficientnet_loss": 0.022696783766150475,
+    "resnet50_pred": "meningioma",
+    "resnet50_correct": false,
+    "resnet50_loss": 1.209228277206421
+  },
+  {
+    "index": 605,
+    "true_class": "glioma",
+    "efficientnet_pred": "glioma",
+    "efficientnet_correct": true,
+    "efficientnet_loss": 0.003115196479484439,
+    "resnet50_pred": "meningioma",
+    "resnet50_correct": false,
+    "resnet50_loss": 2.545180082321167
+  },
+  {
+    "index": 609,
+    "true_class": "glioma",
+    "efficientnet_pred": "glioma",
+    "efficientnet_correct": true,
+    "efficientnet_loss": 0.3071552515029907,
+    "resnet50_pred": "meningioma",
+    "resnet50_correct": false,
+    "resnet50_loss": 3.4095499515533447
+  },
+  {
+    "index": 642,
+    "true_class": "glioma",
+    "efficientnet_pred": "glioma",
+    "efficientnet_correct": true,
+    "efficientnet_loss": 0.14580175280570984,
+    "resnet50_pred": "meningioma",
+    "resnet50_correct": false,
+    "resnet50_loss": 0.7787200212478638
+  },
+  {
+    "index": 651,
+    "true_class": "glioma",
+    "efficientnet_pred": "glioma",
+    "efficientnet_correct": true,
+    "efficientnet_loss": 0.7527115345001221,
+    "resnet50_pred": "meningioma",
+    "resnet50_correct": false,
+    "resnet50_loss": 0.9692832231521606
+  },
+  {
+    "index": 677,
+    "true_class": "glioma",
+    "efficientnet_pred": "glioma",
+    "efficientnet_correct": true,
+    "efficientnet_loss": 0.008516112342476845,
+    "resnet50_pred": "meningioma",
+    "resnet50_correct": false,
+    "resnet50_loss": 1.0406341552734375
+  },
+  {
+    "index": 679,
+    "true_class": "glioma",
+    "efficientnet_pred": "notumor",
+    "efficientnet_correct": false,
+    "efficientnet_loss": 4.098993301391602,
+    "resnet50_pred": "glioma",
+    "resnet50_correct": true,
+    "resnet50_loss": 0.16688354313373566
+  },
+  {
+    "index": 686,
+    "true_class": "glioma",
+    "efficientnet_pred": "glioma",
+    "efficientnet_correct": true,
+    "efficientnet_loss": 0.3071552515029907,
+    "resnet50_pred": "meningioma",
+    "resnet50_correct": false,
+    "resnet50_loss": 3.4095499515533447
+  },
+  {
+    "index": 702,
+    "true_class": "glioma",
+    "efficientnet_pred": "meningioma",
+    "efficientnet_correct": false,
+    "efficientnet_loss": 1.324963092803955,
+    "resnet50_pred": "glioma",
+    "resnet50_correct": true,
+    "resnet50_loss": 0.18574097752571106
+  },
+  {
+    "index": 705,
+    "true_class": "glioma",
+    "efficientnet_pred": "glioma",
+    "efficientnet_correct": true,
+    "efficientnet_loss": 0.5331422686576843,
+    "resnet50_pred": "notumor",
+    "resnet50_correct": false,
+    "resnet50_loss": 5.411710262298584
+  },
+  {
+    "index": 707,
+    "true_class": "glioma",
+    "efficientnet_pred": "meningioma",
+    "efficientnet_correct": false,
+    "efficientnet_loss": 1.4532358646392822,
+    "resnet50_pred": "glioma",
+    "resnet50_correct": true,
+    "resnet50_loss": 0.11957507580518723
+  },
+  {
+    "index": 710,
+    "true_class": "glioma",
+    "efficientnet_pred": "glioma",
+    "efficientnet_correct": true,
+    "efficientnet_loss": 0.08364835381507874,
+    "resnet50_pred": "meningioma",
+    "resnet50_correct": false,
+    "resnet50_loss": 1.8656988143920898
+  },
+  {
+    "index": 723,
+    "true_class": "glioma",
+    "efficientnet_pred": "glioma",
+    "efficientnet_correct": true,
+    "efficientnet_loss": 0.05029558390378952,
+    "resnet50_pred": "meningioma",
+    "resnet50_correct": false,
+    "resnet50_loss": 0.710670530796051
+  },
+  {
+    "index": 734,
+    "true_class": "glioma",
+    "efficientnet_pred": "pituitary",
+    "efficientnet_correct": false,
+    "efficientnet_loss": 5.276418685913086,
+    "resnet50_pred": "glioma",
+    "resnet50_correct": true,
+    "resnet50_loss": 0.2687031328678131
+  },
+  {
+    "index": 753,
+    "true_class": "glioma",
+    "efficientnet_pred": "glioma",
+    "efficientnet_correct": true,
+    "efficientnet_loss": 0.02101333625614643,
+    "resnet50_pred": "meningioma",
+    "resnet50_correct": false,
+    "resnet50_loss": 1.0140849351882935
+  },
+  {
+    "index": 757,
+    "true_class": "glioma",
+    "efficientnet_pred": "glioma",
+    "efficientnet_correct": true,
+    "efficientnet_loss": 0.5331422686576843,
+    "resnet50_pred": "notumor",
+    "resnet50_correct": false,
+    "resnet50_loss": 5.411710262298584
+  },
+  {
+    "index": 772,
+    "true_class": "glioma",
+    "efficientnet_pred": "glioma",
+    "efficientnet_correct": true,
+    "efficientnet_loss": 0.21319444477558136,
+    "resnet50_pred": "meningioma",
+    "resnet50_correct": false,
+    "resnet50_loss": 1.987317442893982
+  },
+  {
+    "index": 786,
+    "true_class": "glioma",
+    "efficientnet_pred": "glioma",
+    "efficientnet_correct": true,
+    "efficientnet_loss": 0.332543283700943,
+    "resnet50_pred": "meningioma",
+    "resnet50_correct": false,
+    "resnet50_loss": 1.2941217422485352
+  },
+  {
+    "index": 792,
+    "true_class": "glioma",
+    "efficientnet_pred": "meningioma",
+    "efficientnet_correct": false,
+    "efficientnet_loss": 3.101029872894287,
+    "resnet50_pred": "glioma",
+    "resnet50_correct": true,
+    "resnet50_loss": 0.2638245224952698
+  },
+  {
+    "index": 795,
+    "true_class": "glioma",
+    "efficientnet_pred": "glioma",
+    "efficientnet_correct": true,
+    "efficientnet_loss": 0.44721123576164246,
+    "resnet50_pred": "meningioma",
+    "resnet50_correct": false,
+    "resnet50_loss": 2.3622472286224365
+  },
+  {
+    "index": 820,
+    "true_class": "meningioma",
+    "efficientnet_pred": "notumor",
+    "efficientnet_correct": false,
+    "efficientnet_loss": 2.6773383617401123,
+    "resnet50_pred": "meningioma",
+    "resnet50_correct": true,
+    "resnet50_loss": 0.009834026917815208
+  },
+  {
+    "index": 835,
+    "true_class": "meningioma",
+    "efficientnet_pred": "pituitary",
+    "efficientnet_correct": false,
+    "efficientnet_loss": 1.0129305124282837,
+    "resnet50_pred": "meningioma",
+    "resnet50_correct": true,
+    "resnet50_loss": 0.2655870318412781
+  },
+  {
+    "index": 840,
+    "true_class": "meningioma",
+    "efficientnet_pred": "meningioma",
+    "efficientnet_correct": true,
+    "efficientnet_loss": 0.02210357040166855,
+    "resnet50_pred": "glioma",
+    "resnet50_correct": false,
+    "resnet50_loss": 1.0054054260253906
+  },
+  {
+    "index": 846,
+    "true_class": "meningioma",
+    "efficientnet_pred": "meningioma",
+    "efficientnet_correct": true,
+    "efficientnet_loss": 0.12785044312477112,
+    "resnet50_pred": "glioma",
+    "resnet50_correct": false,
+    "resnet50_loss": 0.9042453169822693
+  },
+  {
+    "index": 855,
+    "true_class": "meningioma",
+    "efficientnet_pred": "meningioma",
+    "efficientnet_correct": true,
+    "efficientnet_loss": 0.1428045928478241,
+    "resnet50_pred": "pituitary",
+    "resnet50_correct": false,
+    "resnet50_loss": 1.3691579103469849
+  },
+  {
+    "index": 870,
+    "true_class": "meningioma",
+    "efficientnet_pred": "meningioma",
+    "efficientnet_correct": true,
+    "efficientnet_loss": 0.5018187761306763,
+    "resnet50_pred": "pituitary",
+    "resnet50_correct": false,
+    "resnet50_loss": 1.1928887367248535
+  },
+  {
+    "index": 879,
+    "true_class": "meningioma",
+    "efficientnet_pred": "glioma",
+    "efficientnet_correct": false,
+    "efficientnet_loss": 0.8932888507843018,
+    "resnet50_pred": "meningioma",
+    "resnet50_correct": true,
+    "resnet50_loss": 0.1584901064634323
+  },
+  {
+    "index": 884,
+    "true_class": "meningioma",
+    "efficientnet_pred": "meningioma",
+    "efficientnet_correct": true,
+    "efficientnet_loss": 0.14743420481681824,
+    "resnet50_pred": "pituitary",
+    "resnet50_correct": false,
+    "resnet50_loss": 0.7096270322799683
+  },
+  {
+    "index": 893,
+    "true_class": "meningioma",
+    "efficientnet_pred": "meningioma",
+    "efficientnet_correct": true,
+    "efficientnet_loss": 0.2856345772743225,
+    "resnet50_pred": "pituitary",
+    "resnet50_correct": false,
+    "resnet50_loss": 0.753436267375946
+  },
+  {
+    "index": 907,
+    "true_class": "meningioma",
+    "efficientnet_pred": "meningioma",
+    "efficientnet_correct": true,
+    "efficientnet_loss": 0.021529892459511757,
+    "resnet50_pred": "pituitary",
+    "resnet50_correct": false,
+    "resnet50_loss": 2.088247060775757
+  },
+  {
+    "index": 927,
+    "true_class": "meningioma",
+    "efficientnet_pred": "pituitary",
+    "efficientnet_correct": false,
+    "efficientnet_loss": 1.096898078918457,
+    "resnet50_pred": "meningioma",
+    "resnet50_correct": true,
+    "resnet50_loss": 0.011360921896994114
+  },
+  {
+    "index": 943,
+    "true_class": "meningioma",
+    "efficientnet_pred": "glioma",
+    "efficientnet_correct": false,
+    "efficientnet_loss": 0.9241943955421448,
+    "resnet50_pred": "meningioma",
+    "resnet50_correct": true,
+    "resnet50_loss": 0.001042909687384963
+  },
+  {
+    "index": 950,
+    "true_class": "meningioma",
+    "efficientnet_pred": "pituitary",
+    "efficientnet_correct": false,
+    "efficientnet_loss": 0.9188053607940674,
+    "resnet50_pred": "meningioma",
+    "resnet50_correct": true,
+    "resnet50_loss": 0.2554314136505127
+  },
+  {
+    "index": 951,
+    "true_class": "meningioma",
+    "efficientnet_pred": "pituitary",
+    "efficientnet_correct": false,
+    "efficientnet_loss": 4.224043369293213,
+    "resnet50_pred": "meningioma",
+    "resnet50_correct": true,
+    "resnet50_loss": 0.6685981154441833
+  },
+  {
+    "index": 959,
+    "true_class": "meningioma",
+    "efficientnet_pred": "glioma",
+    "efficientnet_correct": false,
+    "efficientnet_loss": 2.396686315536499,
+    "resnet50_pred": "meningioma",
+    "resnet50_correct": true,
+    "resnet50_loss": 0.28633472323417664
+  },
+  {
+    "index": 963,
+    "true_class": "meningioma",
+    "efficientnet_pred": "glioma",
+    "efficientnet_correct": false,
+    "efficientnet_loss": 0.7000232338905334,
+    "resnet50_pred": "meningioma",
+    "resnet50_correct": true,
+    "resnet50_loss": 0.03429437056183815
+  },
+  {
+    "index": 1015,
+    "true_class": "meningioma",
+    "efficientnet_pred": "notumor",
+    "efficientnet_correct": false,
+    "efficientnet_loss": 1.039689540863037,
+    "resnet50_pred": "meningioma",
+    "resnet50_correct": true,
+    "resnet50_loss": 0.28101810812950134
+  },
+  {
+    "index": 1028,
+    "true_class": "meningioma",
+    "efficientnet_pred": "glioma",
+    "efficientnet_correct": false,
+    "efficientnet_loss": 0.7490221858024597,
+    "resnet50_pred": "meningioma",
+    "resnet50_correct": true,
+    "resnet50_loss": 0.009782441891729832
+  },
+  {
+    "index": 1033,
+    "true_class": "meningioma",
+    "efficientnet_pred": "meningioma",
+    "efficientnet_correct": true,
+    "efficientnet_loss": 0.218724325299263,
+    "resnet50_pred": "notumor",
+    "resnet50_correct": false,
+    "resnet50_loss": 1.258730173110962
+  },
+  {
+    "index": 1041,
+    "true_class": "meningioma",
+    "efficientnet_pred": "pituitary",
+    "efficientnet_correct": false,
+    "efficientnet_loss": 1.2010557651519775,
+    "resnet50_pred": "meningioma",
+    "resnet50_correct": true,
+    "resnet50_loss": 0.1512487232685089
+  },
+  {
+    "index": 1042,
+    "true_class": "meningioma",
+    "efficientnet_pred": "glioma",
+    "efficientnet_correct": false,
+    "efficientnet_loss": 1.095163345336914,
+    "resnet50_pred": "meningioma",
+    "resnet50_correct": true,
+    "resnet50_loss": 0.16896572709083557
+  },
+  {
+    "index": 1062,
+    "true_class": "meningioma",
+    "efficientnet_pred": "notumor",
+    "efficientnet_correct": false,
+    "efficientnet_loss": 0.9235451221466064,
+    "resnet50_pred": "meningioma",
+    "resnet50_correct": true,
+    "resnet50_loss": 0.009648106060922146
+  },
+  {
+    "index": 1067,
+    "true_class": "meningioma",
+    "efficientnet_pred": "notumor",
+    "efficientnet_correct": false,
+    "efficientnet_loss": 1.4565284252166748,
+    "resnet50_pred": "meningioma",
+    "resnet50_correct": true,
+    "resnet50_loss": 0.09021275490522385
+  },
+  {
+    "index": 1076,
+    "true_class": "meningioma",
+    "efficientnet_pred": "meningioma",
+    "efficientnet_correct": true,
+    "efficientnet_loss": 0.5459558367729187,
+    "resnet50_pred": "glioma",
+    "resnet50_correct": false,
+    "resnet50_loss": 4.128931522369385
+  },
+  {
+    "index": 1093,
+    "true_class": "meningioma",
+    "efficientnet_pred": "meningioma",
+    "efficientnet_correct": true,
+    "efficientnet_loss": 0.3285478949546814,
+    "resnet50_pred": "pituitary",
+    "resnet50_correct": false,
+    "resnet50_loss": 1.1230181455612183
+  },
+  {
+    "index": 1104,
+    "true_class": "meningioma",
+    "efficientnet_pred": "notumor",
+    "efficientnet_correct": false,
+    "efficientnet_loss": 4.6946892738342285,
+    "resnet50_pred": "meningioma",
+    "resnet50_correct": true,
+    "resnet50_loss": 0.057679176330566406
+  },
+  {
+    "index": 1116,
+    "true_class": "meningioma",
+    "efficientnet_pred": "meningioma",
+    "efficientnet_correct": true,
+    "efficientnet_loss": 0.11780153214931488,
+    "resnet50_pred": "pituitary",
+    "resnet50_correct": false,
+    "resnet50_loss": 0.8691825270652771
+  },
+  {
+    "index": 1192,
+    "true_class": "meningioma",
+    "efficientnet_pred": "meningioma",
+    "efficientnet_correct": true,
+    "efficientnet_loss": 0.17068679630756378,
+    "resnet50_pred": "notumor",
+    "resnet50_correct": false,
+    "resnet50_loss": 1.3358101844787598
+  },
+  {
+    "index": 1244,
+    "true_class": "pituitary",
+    "efficientnet_pred": "glioma",
+    "efficientnet_correct": false,
+    "efficientnet_loss": 2.820800542831421,
+    "resnet50_pred": "pituitary",
+    "resnet50_correct": true,
+    "resnet50_loss": 0.6906112432479858
+  },
+  {
+    "index": 1324,
+    "true_class": "pituitary",
+    "efficientnet_pred": "pituitary",
+    "efficientnet_correct": true,
+    "efficientnet_loss": 0.2143235057592392,
+    "resnet50_pred": "meningioma",
+    "resnet50_correct": false,
+    "resnet50_loss": 0.874208927154541
+  },
+  {
+    "index": 1349,
+    "true_class": "pituitary",
+    "efficientnet_pred": "pituitary",
+    "efficientnet_correct": true,
+    "efficientnet_loss": 0.1284228265285492,
+    "resnet50_pred": "meningioma",
+    "resnet50_correct": false,
+    "resnet50_loss": 2.287804365158081
+  },
+  {
+    "index": 1395,
+    "true_class": "pituitary",
+    "efficientnet_pred": "pituitary",
+    "efficientnet_correct": true,
+    "efficientnet_loss": 0.11097720265388489,
+    "resnet50_pred": "meningioma",
+    "resnet50_correct": false,
+    "resnet50_loss": 1.7594051361083984
+  },
+  {
+    "index": 1421,
+    "true_class": "pituitary",
+    "efficientnet_pred": "pituitary",
+    "efficientnet_correct": true,
+    "efficientnet_loss": 0.19317157566547394,
+    "resnet50_pred": "meningioma",
+    "resnet50_correct": false,
+    "resnet50_loss": 1.3677059412002563
+  },
+  {
+    "index": 1433,
+    "true_class": "pituitary",
+    "efficientnet_pred": "glioma",
+    "efficientnet_correct": false,
+    "efficientnet_loss": 4.232118606567383,
+    "resnet50_pred": "pituitary",
+    "resnet50_correct": true,
+    "resnet50_loss": 0.7497873306274414
+  },
+  {
+    "index": 1545,
+    "true_class": "pituitary",
+    "efficientnet_pred": "pituitary",
+    "efficientnet_correct": true,
+    "efficientnet_loss": 0.13213694095611572,
+    "resnet50_pred": "meningioma",
+    "resnet50_correct": false,
+    "resnet50_loss": 0.7003764510154724
+  }
+]

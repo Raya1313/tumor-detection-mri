@@ -1,0 +1,8 @@
+venv/
+venv-tf/
+venv-torch/
+*.npz
+*.keras
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
