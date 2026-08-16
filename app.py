@@ -1,4 +1,5 @@
 import numpy as np
+import pandas as pd
 import streamlit as st
 import joblib
 from PIL import Image
@@ -68,17 +69,24 @@ if uploaded_file is not None:
     col_img, col_result = st.columns([1, 1])
 
     with col_img:
-        st.image(image_array, caption="Input scan", width=320)
+        st.image(image_array, caption="Input scan", width=280)
 
     with col_result:
         st.subheader("Ensemble prediction (logistic regression)")
         st.metric(label="Predicted class", value=pred_class, delta=f"{confidence:.1%} confidence")
 
-        st.subheader("Per-model breakdown")
-        for name, probs in all_model_probs.items():
-            top_idx = np.argmax(probs)
-            st.write(f"**{name}**: {CLASS_NAMES[top_idx]} ({probs[top_idx]:.1%})")
-            st.bar_chart(dict(zip(CLASS_NAMES, probs)))
+    st.divider()
+    st.subheader("Per-model breakdown")
+
+    breakdown_cols = st.columns(len(all_model_probs))
+    for col, (name, probs) in zip(breakdown_cols, all_model_probs.items()):
+        top_idx = np.argmax(probs)
+        with col:
+            st.caption(f"**{name}** — {CLASS_NAMES[top_idx]} ({probs[top_idx]:.1%})")
+            chart_series = pd.Series(dict(zip(CLASS_NAMES, probs)))
+            chart_series.index.name = "Class"
+            chart_series.name = 'Value'
+            st.bar_chart(chart_series, height=140)
 
     st.divider()
     st.subheader("Grad-CAM: where each model is looking")
@@ -100,6 +108,6 @@ if uploaded_file is not None:
 
         with col:
             st.markdown(f"**{name}**")
-            st.image(overlay, caption=f"Pred: {CLASS_NAMES[pred_idx]}", width=280)
+            st.image(overlay, caption=f"Pred: {CLASS_NAMES[pred_idx]}", width=220)
 else:
     st.info("Upload an MRI image to get a prediction.")
