@@ -14,7 +14,70 @@ from gradcam import (
     overlay_heatmap,
     to_display_rgb,
 )
-from ensemble import predict_ensemble
+from typing import Tuple, Dict
+
+
+def _to_probs(raw_output: np.ndarray) -> np.ndarray:
+    """Convert model output to probability vector(s). Handles already-probabilities or logits."""
+    raw = np.asarray(raw_output)
+    if raw.ndim == 1:
+        raw = raw.reshape(1, -1)
+    # If outputs sum to 1 (softmax), assume already probabilities
+    row_sums = raw.sum(axis=1)
+    if np.allclose(row_sums, 1.0, atol=1e-3) and np.all(raw >= 0):
+        return raw
+    # Otherwise apply softmax per row
+    ex = np.exp(raw - np.max(raw, axis=1, keepdims=True))
+    return ex / ex.sum(axis=1, keepdims=True)
+
+
+def predict_ensemble(
+    image: np.ndarray,
+    models: Dict[str, object],
+    preprocess_fns: Dict[str, object],
+    strategy: str = "average",
+) -> Tuple[int, np.ndarray, Dict[str, np.ndarray]]:
+    """Predict with an ensemble of models.
+
+    Returns (final_pred_idx, ensemble_probs, all_model_probs)
+
+    - image: HxWxC uint8 RGB image
+    - models: dict name->model (with .predict)
+    - preprocess_fns: dict name->preprocess_fn that accepts batched uint8 images
+    - strategy: 'average' (mean probs) or 'voting' (majority vote)
+    """
+    all_model_probs: Dict[str, np.ndarray] = {}
+
+    for name, model in models.items():
+        preprocess_fn = preprocess_fns.get(name, lambda x: x)
+        model_input = preprocess_fn(np.expand_dims(image, axis=0).copy())
+        # model.predict may return logits or probabilities
+        raw_out = model.predict(model_input)
+        probs = _to_probs(raw_out)[0]
+        all_model_probs[name] = probs
+
+    # Stack probs: (n_models, n_classes)
+    probs_stack = np.stack(list(all_model_probs.values()), axis=0)
+
+    if strategy == "average":
+        ensemble_probs = probs_stack.mean(axis=0, keepdims=True)
+        final_idx = int(np.argmax(ensemble_probs))
+    elif strategy == "voting":
+        votes = np.argmax(probs_stack, axis=1)
+        # majority vote
+        vals, counts = np.unique(votes, return_counts=True)
+        winner = vals[np.argmax(counts)]
+        # tie-breaker: use average probs
+        if (counts == counts.max()).sum() > 1:
+            ensemble_probs = probs_stack.mean(axis=0, keepdims=True)
+            final_idx = int(np.argmax(ensemble_probs))
+        else:
+            ensemble_probs = probs_stack.mean(axis=0, keepdims=True)
+            final_idx = int(winner)
+    else:
+        raise ValueError(f"Unknown strategy: {strategy}")
+
+    return final_idx, ensemble_probs, all_model_probs
 
 IMG_SIZE = 224
 
